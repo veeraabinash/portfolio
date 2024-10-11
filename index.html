@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veeraabinash M - frontend Developer Portfolio </title>
+    <meta name="description" content="Explore the portfolio of Veeraabinash M, a seasoned Software Developer with expertise in Vue.js, Nuxt.js, and TypeScript. View projects, experience, and contact information.">
+    <meta name="keywords" content="Veeraabinash M, Software Developer, Vue.js, Nuxt.js, TypeScript, Web Development, Frontend Developer, Chennai, Software Development Engineer, Lobb Logistics, Phantom Smart Solutions, Wynwy Technologies">
+    <meta name="author" content="Veeraabinash M">
+    <link rel="stylesheet" href="main.css" >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.Veeraabinash M.com/">
+    <meta property="og:title" content="Veeraabinash M - Software Developer Portfolio">
+    <meta property="og:description" content="Discover the work and skills of Veeraabinash M, a Vue.js and Nuxt.js expert. View projects, experience, and get in touch for collaborations.">
+    <meta property="og:image" content="https://www.Veeraabinash M.com/assets/portfolio-preview.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.Veeraabinash M.com/">
+    <meta name="twitter:title" content="Veeraabinash M - Software Developer Portfolio">
+    <meta name="twitter:description" content="Explore Veeraabinash M's professional portfolio. See projects, skills, and contact information.">
+    <meta name="twitter:image" content="https://www.Veeraabinash M.com/assets/portfolio-preview.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.Veeraabinash M.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stylesheets -->
+    <link href="https://db.onlinewebfonts.com/c/7cc6719bd5f0310be3150ba33418e72e?family=Comic+Sans+MS" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+            display: flex;
+            flex-wrap: inherit;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 6rem;
+            margin-right: 3.2rem;
+        }
+
+        header {
+            background: #1c1c1c;
+            padding: 10px 0;
+            margin: 0; /* Remove margin */
+            position: fixed !important; /* Make header sticky */
+            top: 0; /* Stick to the top */
+            z-index: 9999;
+            width: 100%;
+        
+        }
+        .edu-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .edu-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center}
+
+        .navbar-brand {
+            color: #fff !important;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #fff !important;
+        }
+
+        .nav-link:hover {
+            color: #ffb53a !important; /* Highlight active link */
+            font-weight: bold;
+        }
+       
+
+        .nav-link i {
+            margin-right: 8px;
+        }
+
+        .profile-pic {
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            border: 5px solid #1c1c1c;
+            margin: 20px auto;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        p {
+            line-height: 1.6;
+            padding: 0 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* ul li {
+            margin-bottom: 15px;
+        } */
+
+        footer {
+            background: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px 15px;
+            margin-bottom: 30px;
+        }
+
+        /*for loader*/
+
+        /* Loader styles */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #1c1c1c;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .navbar-dark .navbar-toggler {
+            border: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .proj{
+            margin-top: 1.2rem;
+        }
+        .center-head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .current-role{
+            color: #ffb53a;
+            margin-top: 6px;
+            margin-left: 1.3rem
+        }
+        .footer-content {
+            display: flex;
+            margin-top: 1rem;
+        }
+        #contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .timeline-item h3 {
+            margin-top: 0;
+        }
+
+        .list-group-item {
+            border: none;
+            background: #ffffff;
+        }
+/*todo   for mobile*/
+        @media (max-width: 768px) {
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            header {
+                background: #1c1c1c;
+                padding: 10px 0;
+                margin: 0; /* Remove margin */
+                width: 100%;
+            }
+
+            .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+                display: flex;
+                justify-content: space-between; /* Aligns items to the left and right */
+                align-items: center;
+                margin: 0; /* Remove margin */
+                padding: 0; /* Remove padding */
+                width: 100%;
+            }
+            
+            .center-head{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .navbar-expand-lg .navbar-nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-item h3 {
+                font-size: 20px;
+            }
+
+            .timeline-item ul {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .container {
+                background: #ffffff;
+                padding: 15px;
+                margin: 0; /* Remove margin */
+                width: 100%;
+            }
+          .edu-row{
+            display: flex;
+            flex-direction: column;
+           }
+
+            .edu-2{
+                margin-top: 1.3rem;
+            }
+            #contact{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .list-group {
+                display: flex;
+                flex-direction: column;
+            }
+            .row {
+                --bs-gutter-x: 1.5rem;
+                --bs-gutter-y: 0;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: calc(-1* var(--bs-gutter-y));
+                margin-right: calc(-.5* var(--bs-gutter-x));
+                margin-left: calc(-.5* var(--bs-gutter-x));
+                padding: 1rem;
+            }
+
+            .footer-content{
+                display: flex;
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            .center-head {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .current-role{
+                color: #ffb53a;
+                margin-top: 6px;
+                margin-left: 0;
+            }
+            .loader-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        /*todo mobile view end */
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .contact-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .contact-info p {
+                margin-right: 20px;
+            }
+        }
+
+        main {
+            padding-top: 60px; /* Adjust this value based on the header height */
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding-top: 70px; /* Adjust this value based on the header height for mobile */
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="loader-wrapper">
+    <span class="loader"></span>
+</div>
+<header class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler left-head" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <span class="center-head"><a class="navbar-brand" href="#">Veeraabinash M </a>
+        <h2 class="current-role">frontend developer</h2>
+        </span>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#summary">🚀 Summary</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">🎓 Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">💻 Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">🛠️ Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">📞 Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="summary" class="container  pt-5">
+        <div class="text-center">
+            <img src="IMG_20241006_195817.jpg" alt="Veeraabinash M - Software Developer" class="profile-pic img-thumbnail">
+            <h1 class="my-3" >Hi Guys 🚀</h1>
+            <p >🎨 Passionate front-end developer with expertise in HTML, CSS, Bootstrap and JavaScript, creating responsive and user-friendly websites 🌐. Skilled in React to build dynamic interfaces ⚡. Detail-oriented and a strong problem solver 🛠️. Excited to craft engaging user experiences and innovative web solutions 💡.</p>
+        </div>
+    </section>
+
+    <section id="education" class="container ">
+        <h2 class="text-center mb-4">🎓 Education</h2>
+        <div class="edu-row">
+            <div class="edu-item">
+                <h3>Bachelor of Engineering; CGPA: 7.2 </h3>
+                <span>(June 2020 - May 2024)</span>
+                <span>Sri raaja raajan collage of Engineering and Technology,</span>
+                <span> Amaravathipudur, karaikudi, India</span>
+
+            </div>
+            <div class="edu-item edu-2" >
+                <h3> S.S.L.C - 80% (Mar 2018) </h3>
+                <span>Vasan Matric Hr Secondary school </span>
+                <h3>  H.S.C : 53.3 % (Mar 2020)</h3>
+                <span>Syed Ammal Matric Hr Secondary school </span>
+                <span>Ramanathapuram, India</span>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h2 class="text-center mb-4">💻 Technical Skills</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item">🌐 Frontend Development: JavaScript, HTML, CSS, bootstrap</li>
+                    <li class="list-group-item">🛠️ Frontend Frameworks: React</li>
+                    <li class="list-group-item">🪛 Tools: GitHub, VS code, Chatgpt, Claude, Postman</li>
+                    <li class="list-group-item">🖥️ Others: Excel</li>
+                   
+                </ul>
+            </div>
+           
+        </div>
+    </section>
+
+    
+
+    <section id="projects" class="container ">
+        <h2 class="text-center mb-4">🛠️ Projects</h2>
+        <div class="row">
+            <div class="proj">
+                <h3>WEATHER APP - Real Time Weather Data</h3>
+                <ul>
+                    <li>Weather app provides users with real-time weather data, including temperature, humidity, and 
+                        wind speed, for any searched location. </li>
+                     <li>It features a minimal and user-friendly interface, making it easy to view essential weather information quickly.</li>
+                     <li> The app includes error handling for invalid locations, ensuring a smooth user experience.</li>
+                   
+                    <li>Tools Used: HTML, CSS, JAVASCRIPT</li>
+                </ul>
+            </div>
+            <div class="proj">
+                <h3>CALCULATOR - Arithmetic Functions</h3>
+                <ul>
+                   <li>Calculator project is a functional web-based tool for performing basic arithmetic operations, including addition, subtraction, multiplication, and division. </li>
+                    <li> The interface is straightforward, with clear buttons for each number and operation, as well as a display screen for showing calculations. 
+                 </li>
+                 <li>Tools Used: HTML, CSS, JAVASCRIPT</li>
+                </ul>
+            </div>
+            <div class="proj">
+                <h3>TO-DO LIST - Manage Tasks Adding And Deleting</h3>
+                <ul>
+                    <li> To-do list project is a simple and interactive app that allows users to add, delete, and manage tasks.</li>
+                    <li> The interface includes input fields for adding tasks and a button to clear all tasks, making it user-friendly for organizing daily activities.</li>
+                    <li>Tools Used: HTML, CSS, JAVASCRIPT</li>
+                </ul>
+            </div>
+            <div class="proj">
+                <h3>BOOK SMART - Books Order Website</h3>
+                <ul>
+                    <li>"Books World," is a web-based platform for exploring a variety of books. The homepage showcases a clean, user-friendly layout with a top navigation bar, a featured section with a book collection, and options to explore different genres.</li>
+                    <li>Users can browse through the books, view details, and possibly interact with features like "Read More" buttons.</li>
+                    <li>The design appears responsive, adjusting well across different screen sizes, which ensures accessibility on both desktop and mobile devices. </li>
+                    <li>Tools Used: HTML, CSS, BOOTSTRAP</li>
+                </ul>
+            </div>
+            <div class="proj">
+                <h3>FOOT FANTACY - Food Order Website</h3>
+                <ul>
+                    <li>Food ordering website, Food Fantasy, has a clean, intuitive layout featuring sections like the menu, gallery, customer reviews, and order form.</li>
+                    <li> Users can browse various dishes with images, prices, and "Order Now" buttons for easy selection. The site also includes a "Customer Reviews" section for feedback, an order form, and team member profiles, which add a personal touch. </li>
+                    <li>The footer provides quick links, contact information, and service highlights. Overall, it’s visually appealing and functional, making it user-friendly for online food ordering.</li>
+                    <li>Tools Used: HTML, CSS</li>
+                </ul>
+            </div>
+            <div class="proj">
+                <h3>ROYAL ENFIELD - Bike test Drive Website </h3>
+                <ul>
+                    <li>Royal Enfield project showcases a website dedicated to the iconic motorcycle brand, featuring sections like home, booking, and contact. The design captures the brand's essence with visuals and a classic style, offering users an engaging experience. </li>
+                    <li>Tools Used: HTML, CSS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2 class="text-center mb-4">📞 Contact</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:mveeraabinash@gmail.com">mveeraabinash@gmail.com</a></p>
+            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/veeraabinash-m-696b5328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Veeraabinash M</a></p>
+            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/veeraabinash" target="_blank">Veeraabinash</a></p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content" style="text-align: center;">
+        <p>&copy; 2024 Veeraabinash M. All rights reserved.</p> 
+    </div>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader-wrapper');
+    loader.classList.add('fade-out');
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 1000);
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.from('header', { duration: 1, y: '-100%', ease: 'bounce' });
+    gsap.from('.profile-pic', { duration: 1.5, opacity: 0, scale: 0.5, ease: 'elastic' });
+    gsap.from('h1', { duration: 1, opacity: 0, y: -50, delay: 1 });
+    gsap.from('h2, h3', { duration: 1, opacity: 0, x: -50, delay: 1.5, stagger: 0.3 });
+    gsap.from('p, ul', { duration: 1, opacity: 0, x: 50, delay: 2, stagger: 0.3 });
+
+    // Highlight active nav link using Intersection Observer
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(id)) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>
+
+</body>
+</html>
