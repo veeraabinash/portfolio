@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.env*.local
+npm-debug.log*
+
+# raw 3D scan source (processed copy lives in public/models)
+human/
+# raw 3D model source (processed copy lives in public/models/boy)
+an-animated-boy-in-red-hoodie/
